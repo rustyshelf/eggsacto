@@ -14,6 +14,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     private let pixelsPerSecond = 40 / 60 as Double
     private let maxTimerTime = 20 * 60 as NSTimeInterval
     
+    //1 second might seem sensible, but 200ms is going to give you a more fluid update time
+    private let timerUpdateTime = 0.2
+    
     private var endTime = 0 as NSTimeInterval
     private var timer: NSTimer?
     private var soundId = 0 as SystemSoundID
@@ -48,7 +51,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     private func startUIUpdateTimer() {
         stopUIUpdateTimer()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.timerDidFire), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(timerUpdateTime, target: self, selector: #selector(ViewController.timerDidFire), userInfo: nil, repeats: true)
     }
     
     private func stopUIUpdateTimer() {
