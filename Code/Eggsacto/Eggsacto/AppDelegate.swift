@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Eggsacto
-//
-//  Created by Russell Ivanovic on 3/08/2016.
-//  Copyright © 2016 Shifty Jelly. All rights reserved.
-//
 
 import UIKit
 

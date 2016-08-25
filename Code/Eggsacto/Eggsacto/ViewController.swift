@@ -94,6 +94,10 @@ class ViewController: UIViewController {
         AudioServicesPlaySystemSound(soundId)
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     //MARK:- Formatting Stuff That Should Be In Another Class
     private func formatTime(time: NSTimeInterval) -> String {
         //we don't deal with hours here because we're lazy, and our timer only goes to 20, though really it should go to 11
