@@ -96,8 +96,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             AudioServicesCreateSystemSoundID(NSURL(fileURLWithPath: filePath), &soundId)
         }
         
+        //play our amazing sound
         AudioServicesPlaySystemSound(soundId)
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        
+        //vibrate the phone 3 times, don't do this at home kids
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            for _ in 1...3 {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                NSThread.sleepForTimeInterval(1)
+            }
+        }
     }
     
     //MARK:- UIScrollViewDelegate
