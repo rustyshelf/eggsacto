@@ -158,6 +158,9 @@
                                     <constraint firstAttribute="trailing" secondItem="ljo-3A-VgS" secondAttribute="trailing" constant="148" id="bSF-0k-TjJ"/>
                                     <constraint firstItem="ljo-3A-VgS" firstAttribute="leading" secondItem="8gv-mu-DAy" secondAttribute="leading" constant="148" id="kcB-jg-7Q8"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZTu-VO-JRj"/>
+                                </connections>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-Iw-zxU">
                                 <rect key="frame" x="289" y="542" width="22" height="22"/>

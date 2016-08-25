@@ -2,7 +2,7 @@
 import UIKit
 import AudioToolbox
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var remainingTimeLabel: UILabel! {
         didSet {
@@ -12,10 +12,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerScrollView: UIScrollView!
     
     private let pixelsPerSecond = 40 / 60 as Double
+    private let maxTimerTime = 20 * 60 as NSTimeInterval
     
     private var endTime = 0 as NSTimeInterval
     private var timer: NSTimer?
     private var soundId = 0 as SystemSoundID
+    
+    private var userIsDraggingScrollView = false
 
     //MARK:- UI Actions
     @IBAction func oneMinTapped(sender: AnyObject) {
@@ -94,6 +97,22 @@ class ViewController: UIViewController {
         AudioServicesPlaySystemSound(soundId)
     }
     
+    //MARK:- UIScrollViewDelegate
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        userIsDraggingScrollView = true
+    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if !userIsDraggingScrollView || scrollView.contentOffset.x < 0 { return }
+        
+        let newTime = min(maxTimerTime, Double(scrollView.contentOffset.x) / pixelsPerSecond)
+        setTimer(newTime)
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        userIsDraggingScrollView = false
+    }
+    
+    //MARK:- White Status Bar Is Dope
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
