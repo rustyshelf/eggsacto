@@ -43,7 +43,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     //MARK:- UI Update Timer
     private func setTimer(time: NSTimeInterval) {
         endTime = NSDate().timeIntervalSince1970 + time
-        
         remainingTimeLabel.layer.removeAllAnimations()
         startUIUpdateTimer()
     }
@@ -98,6 +97,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         
         AudioServicesPlaySystemSound(soundId)
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     //MARK:- UIScrollViewDelegate
@@ -112,7 +112,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        //the user flicked the scroll view and it's done decelerating
         userIsDraggingScrollView = false
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            //this handles the case where the user scrolls slowly instead of flicking
+            userIsDraggingScrollView = false
+        }
     }
     
     //MARK:- White Status Bar Is Dope
@@ -124,7 +132,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     private func formatTime(time: NSTimeInterval) -> String {
         //we don't deal with hours here because we're lazy, and our timer only goes to 20, though really it should go to 11
         let minutes = floor(time / 60)
-        let seconds = time % 60
+        let seconds = floor(time % 60)
         
         return NSString(format: "%1.0lf:%02.0lf", minutes, seconds) as String
     }
