@@ -11,18 +11,15 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var timerScrollView: UIScrollView!
     
-    private var endTime = -1 as NSTimeInterval
+    private let pixelsPerSecond = 40 / 60 as Double
+    
+    private var endTime = 0 as NSTimeInterval
     private var timer: NSTimer?
     private var soundId = 0 as SystemSoundID
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
     //MARK:- UI Actions
     @IBAction func oneMinTapped(sender: AnyObject) {
-        setTimer(1 * 2)
+        setTimer(1 * 60)
     }
 
     @IBAction func twoMinTapped(sender: AnyObject) {
@@ -63,8 +60,9 @@ class ViewController: UIViewController {
             eggsactoTimerDidEndTimeForFanfare()
         }
         else {
-            updateEndTimeLabel(now)
-            updateProgressScroll(now)
+            let timeRemaining = endTime - now
+            remainingTimeLabel.text = formatTime(timeRemaining)
+            timerScrollView.contentOffset.x = CGFloat(timeRemaining * pixelsPerSecond)
         }
     }
     
@@ -94,17 +92,6 @@ class ViewController: UIViewController {
         }
         
         AudioServicesPlaySystemSound(soundId)
-    }
-    
-    //MARK:- UI Helpers
-    private func updateEndTimeLabel(currentTime: NSTimeInterval) {
-        let timeRemaining = endTime - currentTime
-        
-        remainingTimeLabel.text = formatTime(timeRemaining)
-    }
-    
-    private func updateProgressScroll(currentTime: NSTimeInterval) {
-        timerScrollView.contentOffset.x = 12
     }
     
     //MARK:- Formatting Stuff That Should Be In Another Class
