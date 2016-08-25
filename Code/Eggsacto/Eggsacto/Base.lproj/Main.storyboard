@@ -31,14 +31,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKb-bf-qfE" userLabel="Button View">
-                                <rect key="frame" x="185" y="302" width="230" height="127"/>
+                                <rect key="frame" x="146" y="302" width="308" height="127"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlV-mg-9Iu">
-                                        <rect key="frame" x="10" y="8" width="101" height="50"/>
+                                        <rect key="frame" x="10" y="8" width="140" height="50"/>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.87843137250000003" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="eOW-QB-OQz"/>
-                                            <constraint firstAttribute="width" constant="101" id="sY8-mG-ACD"/>
+                                            <constraint firstAttribute="width" constant="140" id="sY8-mG-ACD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="1 MIN">
@@ -53,14 +53,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="add1MinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKz-o5-LQs"/>
+                                            <action selector="oneMinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g1a-au-aqr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bN-So-o97">
-                                        <rect key="frame" x="119" y="8" width="101" height="51"/>
+                                        <rect key="frame" x="158" y="8" width="140" height="51"/>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.87843137250000003" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="101" id="Rrp-Pk-HsO"/>
+                                            <constraint firstAttribute="width" constant="140" id="Rrp-Pk-HsO"/>
                                             <constraint firstAttribute="height" constant="51" id="tEd-h6-RKb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -76,15 +76,15 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="add2MinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xLK-mH-loh"/>
+                                            <action selector="twoMinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rcq-Ey-ubg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91w-qV-G7T">
-                                        <rect key="frame" x="10" y="66" width="101" height="51"/>
+                                        <rect key="frame" x="10" y="66" width="140" height="51"/>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.87843137250000003" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="51" id="K00-hP-WH2"/>
-                                            <constraint firstAttribute="width" constant="101" id="eOu-LO-6rY"/>
+                                            <constraint firstAttribute="width" constant="140" id="eOu-LO-6rY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="5 MINS">
@@ -99,14 +99,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="add5MinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJk-Hw-K4y"/>
+                                            <action selector="fiveMinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gPm-5K-pY2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36p-cm-37N">
-                                        <rect key="frame" x="119" y="66" width="101" height="51"/>
+                                        <rect key="frame" x="158" y="66" width="140" height="51"/>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.87843137250000003" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="101" id="3NZ-Ek-44q"/>
+                                            <constraint firstAttribute="width" constant="140" id="3NZ-Ek-44q"/>
                                             <constraint firstAttribute="height" constant="51" id="QLo-mb-1Il"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -122,7 +122,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="add12MinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhg-47-BQ2"/>
+                                            <action selector="twelveMinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BN9-eV-V0k"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -179,7 +179,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="remainingTime" destination="2go-UE-8Bi" id="yup-bG-LWl"/>
+                        <outlet property="remainingTimeLabel" destination="2go-UE-8Bi" id="EMS-s1-H6D"/>
+                        <outlet property="timerScrollView" destination="8gv-mu-DAy" id="MnC-fc-Afj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

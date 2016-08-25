@@ -12,6 +12,8 @@
 		BD80A23D1D51C80D00DBFB9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD80A23B1D51C80D00DBFB9D /* Main.storyboard */; };
 		BD80A23F1D51C80D00DBFB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD80A23E1D51C80D00DBFB9D /* Assets.xcassets */; };
 		BD80A2421D51C80D00DBFB9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD80A2401D51C80D00DBFB9D /* LaunchScreen.storyboard */; };
+		BD9176C61D6EB0F400B5CB10 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9176C51D6EB0F400B5CB10 /* UIFontExtension.swift */; };
+		BD9176C81D6EB3A800B5CB10 /* explosion-mono.aif in Resources */ = {isa = PBXBuildFile; fileRef = BD9176C71D6EB3A800B5CB10 /* explosion-mono.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		BD80A23E1D51C80D00DBFB9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD80A2411D51C80D00DBFB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD80A2431D51C80D00DBFB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD9176C51D6EB0F400B5CB10 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		BD9176C71D6EB3A800B5CB10 /* explosion-mono.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "explosion-mono.aif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		BD80A2361D51C80D00DBFB9D /* Eggsacto */ = {
 			isa = PBXGroup;
 			children = (
+				BD9176C41D6EB0E800B5CB10 /* Extensions */,
+				BD9176CA1D6EB3CC00B5CB10 /* User Interface */,
 				BD80A2371D51C80D00DBFB9D /* AppDelegate.swift */,
-				BD80A2391D51C80D00DBFB9D /* ViewController.swift */,
-				BD80A23B1D51C80D00DBFB9D /* Main.storyboard */,
-				BD80A23E1D51C80D00DBFB9D /* Assets.xcassets */,
-				BD80A2401D51C80D00DBFB9D /* LaunchScreen.storyboard */,
 				BD80A2431D51C80D00DBFB9D /* Info.plist */,
+				BD9176C91D6EB3AE00B5CB10 /* Amazing Assets */,
 			);
 			path = Eggsacto;
+			sourceTree = "<group>";
+		};
+		BD9176C41D6EB0E800B5CB10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD9176C51D6EB0F400B5CB10 /* UIFontExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		BD9176C91D6EB3AE00B5CB10 /* Amazing Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BD80A23E1D51C80D00DBFB9D /* Assets.xcassets */,
+				BD9176C71D6EB3A800B5CB10 /* explosion-mono.aif */,
+			);
+			name = "Amazing Assets";
+			sourceTree = "<group>";
+		};
+		BD9176CA1D6EB3CC00B5CB10 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				BD9176CB1D6EB3E400B5CB10 /* Launch Screen */,
+				BD80A23B1D51C80D00DBFB9D /* Main.storyboard */,
+				BD80A2391D51C80D00DBFB9D /* ViewController.swift */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		BD9176CB1D6EB3E400B5CB10 /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BD80A2401D51C80D00DBFB9D /* LaunchScreen.storyboard */,
+			);
+			name = "Launch Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +163,7 @@
 				BD80A2421D51C80D00DBFB9D /* LaunchScreen.storyboard in Resources */,
 				BD80A23F1D51C80D00DBFB9D /* Assets.xcassets in Resources */,
 				BD80A23D1D51C80D00DBFB9D /* Main.storyboard in Resources */,
+				BD9176C81D6EB3A800B5CB10 /* explosion-mono.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD80A23A1D51C80D00DBFB9D /* ViewController.swift in Sources */,
+				BD9176C61D6EB0F400B5CB10 /* UIFontExtension.swift in Sources */,
 				BD80A2381D51C80D00DBFB9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +326,7 @@
 				BD80A2481D51C80D00DBFB9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
