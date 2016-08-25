@@ -25,4 +25,9 @@ UIColor(red:0.098, green:0.062, blue:0.188, alpha:1)
 ### Time slider
 
 40pt = 1 minute.
+Height: 90pt.
 The slider image has 40pt padding on the left and right.
+
+### Buttons
+
+Height: 50pt
