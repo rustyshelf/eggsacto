@@ -11,6 +11,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     @IBOutlet weak var timerScrollView: UIScrollView!
     
+    @IBOutlet weak var trailingRulerSpace: NSLayoutConstraint!
+    @IBOutlet weak var leadingRulerSpace: NSLayoutConstraint!
+    
+    private let rulerImagePadding = 40 as CGFloat
     private let pixelsPerSecond = 40 / 60 as Double
     private let maxTimerTime = 20 * 60 as NSTimeInterval
     
@@ -38,6 +42,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func twelveMinTapped(sender: AnyObject) {
         setTimer(12 * 60)
+    }
+    
+    override func viewDidLoad() {
+        //we need the arrow to be at the right spot for various widths, so go to the middle, then go back the amount
+        //our 'helpful' designer has padded the ruler
+        let offset = (self.view.bounds.width / 2.0) - rulerImagePadding
+        trailingRulerSpace.constant = offset
+        leadingRulerSpace.constant = offset
     }
     
     //MARK:- UI Update Timer
@@ -98,14 +110,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         //play our amazing sound
         AudioServicesPlaySystemSound(soundId)
-        
-        //vibrate the phone 3 times, don't do this at home kids
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-            for _ in 1...3 {
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                NSThread.sleepForTimeInterval(1)
-            }
-        }
     }
     
     //MARK:- UIScrollViewDelegate

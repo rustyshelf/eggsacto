@@ -182,8 +182,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="leadingRulerSpace" destination="kcB-jg-7Q8" id="HL9-1s-Sc5"/>
                         <outlet property="remainingTimeLabel" destination="2go-UE-8Bi" id="EMS-s1-H6D"/>
                         <outlet property="timerScrollView" destination="8gv-mu-DAy" id="MnC-fc-Afj"/>
+                        <outlet property="trailingRulerSpace" destination="bSF-0k-TjJ" id="K5G-lB-L23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
