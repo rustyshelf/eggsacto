@@ -11,7 +11,7 @@ extension UIFont {
         ]
         
         let fontDescriptorAttributes = [UIFontDescriptorFeatureSettingsAttribute: fontDescriptorFeatureSettings]
-        let fontDescriptor = self.fontDescriptor().fontDescriptorByAddingAttributes(fontDescriptorAttributes)
+        let fontDescriptor = self.fontDescriptor.addingAttributes(fontDescriptorAttributes)
         
         return UIFont(descriptor: fontDescriptor, size: pointSize)
     }
